@@ -1,26 +1,28 @@
 
             /*control con mouse*/
 function pulsada (tecla) {
-    var listaTeclaPantalla = document.getElementsByClassName('pantalla');
-    var textoTeclaPantalla = listaTeclaPantalla[0].firstChild;
+    var listaTeclaPantalla = $(".pantalla");
+    var textoTeclaPantalla = listaTeclaPantalla[0].childNodes [0];
     
     if (tecla=='='){
         var resultado = eval(textoTeclaPantalla.nodeValue);
-        textoTeclaPantalla.nodeValue = resultado;sdad
+        textoTeclaPantalla.nodeValue = resultado;
     }
     else {
         textoTeclaPantalla.nodeValue = textoTeclaPantalla.nodeValue + tecla;
     }
     if (tecla=="C"){
-        textoTeclaPantalla.nodeValue = ' ';
+        textoTeclaPantalla.nodeValue = (' ');
      }
-    
+     if(tecla=='=' && ctype_digit(resultado)){
+        textoTeclaPantalla.nodeValue = (' ');
+     }    
     }
             /*control con teclado*/
 
-
+/*
             window.onload = function(){ //Acciones tras cargar la página
-                pantalla=document.getElementById("textoPantalla"); //elemento pantalla de salida
+                pantalla=document.getElementById("pantalla"); //elemento pantalla de salida
                 document.onkeydown = teclado; //función teclado disponible
                 }
                 x="0"; //número en pantalla
@@ -146,4 +148,4 @@ function pulsada (tecla) {
                          if (k==46) {borradoTotal()} //Tecla borrado total: "supr"
                          if (k==8) {retro()} //Retroceso en escritura : tecla retroceso.
                          if (k==36) {borradoParcial()} //Tecla borrado parcial: tecla de inicio.
-                         }
+                         }*/
